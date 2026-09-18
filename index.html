@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Olio di Sestri Levante: olio extravergine di oliva ligure, raccolto a mano e prodotto con cura artigianale.">
+  <title>Olio di Sestri Levante | Olio Extravergine Ligure</title>
+  <style>
+    :root {
+      --verde: #173b2b;
+      --verde-scuro: #10291e;
+      --oro: #c89a3c;
+      --crema: #f7f3e9;
+      --terra: #8c5b32;
+      --testo: #253028;
+      --bianco: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--testo);
+      background: var(--crema);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+    h1, h2, h3, .brand { font-family: Georgia, 'Times New Roman', serif; }
+    .topbar {
+      background: var(--verde-scuro);
+      color: white;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 13px;
+      letter-spacing: .04em;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 1180px;
+      margin: auto;
+      padding: 20px 24px;
+    }
+    .brand {
+      color: var(--verde);
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: .04em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .nav-links a {
+      color: var(--testo);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .nav-links a:hover { color: var(--oro); }
+    .hero {
+      min-height: 560px;
+      display: grid;
+      place-items: center;
+      padding: 80px 24px;
+      color: white;
+      text-align: center;
+      background:
+        linear-gradient(90deg, rgba(12,38,27,.80), rgba(12,38,27,.42)),
+        url('https://images.unsplash.com/photo-1474979266404-7cadd259c308?auto=format&fit=crop&w=1800&q=85') center/cover;
+    }
+    .hero-inner { max-width: 760px; }
+    .eyebrow {
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #f0d58e;
+      margin-bottom: 16px;
+    }
+    h1 { font-size: clamp(42px, 7vw, 82px); line-height: 1.03; margin: 0 0 20px; }
+    .hero p { max-width: 600px; margin: 0 auto 30px; font-size: 18px; }
+    .button-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .button {
+      display: inline-block;
+      border: 1px solid transparent;
+      padding: 14px 22px;
+      border-radius: 2px;
+      font-weight: bold;
+      font-size: 15px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .2s, background .2s;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: white; background: var(--oro); }
+    .button-primary:hover { background: #af8128; }
+    .button-outline { color: white; border-color: rgba(255,255,255,.82); }
+    .button-outline:hover { background: rgba(255,255,255,.12); }
+    section { padding: 82px 24px; }
+    .container { max-width: 1100px; margin: auto; }
+    .section-title { text-align: center; max-width: 700px; margin: 0 auto 48px; }
+    .section-title h2 { color: var(--verde); font-size: 40px; margin: 0 0 12px; }
+    .section-title p { margin: 0; font-size: 17px; }
+    .product {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      box-shadow: 0 16px 45px rgba(30,47,34,.12);
+    }
+    .product-image {
+      min-height: 490px;
+      background: #e8e4d7 url('https://images.unsplash.com/photo-1474979266404-7cadd259c308?auto=format&fit=crop&w=1000&q=85') center/cover;
+    }
+    .product-info { padding: 52px; }
+    .product-info h3 { color: var(--verde); font-size: 37px; line-height: 1.12; margin: 0 0 8px; }
+    .sub { color: #69766b; margin: 0 0 18px; }
+    .price { color: var(--oro); font-family: Georgia, serif; font-size: 36px; margin: 22px 0; }
+    .details { padding: 0; list-style: none; margin: 22px 0 30px; border-top: 1px solid #e8e8e8; }
+    .details li { border-bottom: 1px solid #e8e8e8; padding: 10px 0; }
+    .buy-panel { background: #f8f4ea; padding: 20px; border-left: 4px solid var(--oro); }
+    .buy-panel h4 { margin: 0 0 8px; color: var(--verde); font-size: 18px; }
+    .buy-panel p { margin: 0 0 16px; font-size: 14px; }
+    .stripe { background: #635bff; color: white; }
+    .stripe:hover { background: #5149dc; }
+    .notice { margin-top: 14px; font-size: 12px; color: #5b665d; }
+    .story-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; }
+    .story-photo {
+      min-height: 400px;
+      border-radius: 9px;
+      background: url('https://images.unsplash.com/photo-1541447270888-59e07194e811?auto=format&fit=crop&w=1100&q=85') center/cover;
+    }
+    .story-text h2 { color: var(--verde); font-size: 40px; margin: 0 0 20px; }
+    .story-text p { font-size: 17px; }
+    .features { background: var(--verde); color: white; }
+    .features .section-title h2 { color: white; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card { padding: 26px; border: 1px solid rgba(255,255,255,.2); border-radius: 7px; }
+    .card h3 { color: #f0d58e; font-size: 22px; margin: 0 0 10px; }
+    .card p { margin: 0; }
+    .shipping { background: #efe7d6; }
+    .shipping-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+    .shipping-box { background: white; border-radius: 8px; padding: 30px; }
+    .shipping-box h3 { color: var(--verde); font-size: 25px; margin: 0 0 8px; }
+    footer { background: var(--verde-scuro); color: #e3e7df; padding: 42px 24px; }
+    .footer-inner { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    footer a { color: #f0d58e; }
+    @media (max-width: 760px) {
+      nav { flex-direction: column; padding: 16px 20px; }
+      .product, .story-grid { grid-template-columns: 1fr; }
+      .product-image { min-height: 340px; }
+      .product-info { padding: 32px 24px; }
+      .cards, .shipping-grid { grid-template-columns: 1fr; }
+      section { padding: 60px 20px; }
+      .nav-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Olio extravergine di oliva prodotto a Sestri Levante · Spedizioni in Italia e Unione Europea</div>
+  <nav>
+    <a class="brand" href="#inizio">OLIO DI SESTRI LEVANTE</a>
+    <div class="nav-links">
+      <a href="#olio">Il nostro olio</a>
+      <a href="#storia">La storia</a>
+      <a href="#spedizioni">Spedizioni</a>
+      <a href="#contatti">Contatti</a>
+    </div>
+  </nav>
+
+  <main id="inizio">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Dalla Liguria alla tua tavola</div>
+        <h1>Olio Ligure,<br>fatto con cura.</h1>
+        <p>Olio extravergine di oliva da 1 litro, prodotto a mano a Sestri Levante: autentico, intenso e pensato per i sapori di ogni giorno.</p>
+        <div class="button-row">
+          <a class="button button-primary" href="#olio">Acquista ora</a>
+          <a class="button button-outline" href="#storia">Scopri la storia</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="olio">
+      <div class="container">
+        <div class="section-title">
+          <h2>Olio Extravergine Ligure</h2>
+          <p>Una bottiglia da 1 litro di olio prodotto a mano a Sestri Levante.</p>
+        </div>
+        <article class="product">
+          <div class="product-image" role="img" aria-label="Bottiglia di olio extravergine di oliva"></div>
+          <div class="product-info">
+            <h3>Olio Ligure<br>1 litro</h3>
+            <p class="sub">Olio extravergine di oliva · Sestri Levante, Liguria</p>
+            <div class="price">16,50 €</div>
+            <p>Un olio per condire a crudo, accompagnare pesce e verdure, preparare bruschette e portare sulla tavola il carattere della Liguria.</p>
+            <ul class="details">
+              <li><strong>Formato:</strong> 1 litro</li>
+              <li><strong>Origine:</strong> Sestri Levante, Liguria</li>
+              <li><strong>Lavorazione:</strong> prodotto a mano</li>
+              <li><strong>Conservazione:</strong> lontano da luce e fonti di calore</li>
+            </ul>
+            <div class="buy-panel">
+              <h4>Acquista in modo sicuro</h4>
+              <p>Il pagamento con carta avviene sulla pagina protetta di Stripe.</p>
+              <a class="button stripe" href="https://buy.stripe.com/test_3cI4gA6pmcJ83O0aw6co000" target="_blank" rel="noopener">Paga con carta</a>
+              <p class="notice">Link Stripe in modalità test/sandbox: prima di vendere davvero dovrai attivare la modalità live su Stripe e sostituire questo link con quello live.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="storia">
+      <div class="container story-grid">
+        <div class="story-text">
+          <h2>Il sapore di Sestri Levante</h2>
+          <p>Olio di Sestri Levante nasce dal legame con il territorio ligure e con una lavorazione attenta, fatta a mano. Vogliamo offrire un olio semplice e genuino, senza filtri inutili: dall'oliva alla bottiglia, con cura.</p>
+          <p>Ogni bottiglia racconta la costa, le colline e la tradizione dell'olio ligure. È pensata per chi cerca un prodotto locale da usare davvero ogni giorno.</p>
+        </div>
+        <div class="story-photo" role="img" aria-label="Uliveto in Liguria"></div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="section-title">
+          <h2>Perché sceglierlo</h2>
+          <p>Una scelta diretta, locale e trasparente.</p>
+        </div>
+        <div class="cards">
+          <div class="card"><h3>Prodotto a mano</h3><p>Un lavoro artigianale curato in ogni passaggio.</p></div>
+          <div class="card"><h3>100% ligure</h3><p>Olio legato al territorio di Sestri Levante.</p></div>
+          <div class="card"><h3>Direttamente a casa</h3><p>Ordina online: spediamo in Italia e nell'Unione Europea.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="spedizioni" class="shipping">
+      <div class="container">
+        <div class="section-title">
+          <h2>Spedizioni</h2>
+          <p>Spediamo in Italia e nei Paesi dell'Unione Europea.</p>
+        </div>
+        <div class="shipping-grid">
+          <div class="shipping-box"><h3>Italia</h3><p>La tariffa e i tempi di consegna vengono comunicati prima della spedizione. Per informazioni scrivici via email.</p></div>
+          <div class="shipping-box"><h3>Unione Europea</h3><p>Possiamo spedire nei Paesi UE. Contattaci prima dell'ordine per costo e disponibilità della spedizione.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contatti">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contatti</h2>
+          <p>Per informazioni sul prodotto, ordini e spedizioni: <a href="mailto:iessiveasna@gmail.com">iessiveasna@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div><strong>Olio di Sestri Levante</strong><br>Olio extravergine di oliva ligure</div>
+      <div>Contatti: <a href="mailto:iessiveasna@gmail.com">iessiveasna@gmail.com</a></div>
+      <div>© 2026 Olio di Sestri Levante</div>
+    </div>
+  </footer>
+</body>
+</html>
